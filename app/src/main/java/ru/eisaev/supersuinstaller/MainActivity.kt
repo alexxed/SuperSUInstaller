@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         init()
         execCmdNoOutput("mount -o remount,rw /dev/block/platform/soc/by-name/system /system")
         Thread.sleep(1_000)
+        execCmdNoOutput("mount > /sdcard/sulog.txt && id >> /sdcard/sulog.txt")
+        Thread.sleep(1_000)
         execCmdNoOutput("cp /sdcard/su /system/xbin/")
         Thread.sleep(1_000)
         execCmdNoOutput("chmod 755 /system/xbin/su")
