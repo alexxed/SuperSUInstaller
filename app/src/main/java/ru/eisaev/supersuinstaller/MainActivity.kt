@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         res2sdcard(R.raw.supersuapk, "SuperSU-v2.82-SR5.apk")
 
         init()
-        execCmdNoOutput("mount -o remount,rw /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vendor /vendor")
+        execCmdNoOutput("mount -o remount,rw /dev/root /")
         Thread.sleep(1_000)
         execCmdNoOutput("mount > /sdcard/sulog.txt && id >> /sdcard/sulog.txt")
         Thread.sleep(1_000)
